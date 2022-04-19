@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--My places-->
         <scene sceneID="zdl-Xe-knu">
             <objects>
                 <tableViewController id="Qr1-Oh-WGI" customClass="MainViewController" customModule="Myplaces" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +30,7 @@
                             <outlet property="delegate" destination="Qr1-Oh-WGI" id="6VA-wC-49M"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="3jj-OD-LL5"/>
+                    <navigationItem key="navigationItem" title="My places" id="3jj-OD-LL5"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JzR-EM-612" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,6 +43,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aKZ-Qu-F5e">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="30"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="Qr1-Oh-WGI" kind="relationship" relationship="rootViewController" id="Pxb-8y-gzQ"/>

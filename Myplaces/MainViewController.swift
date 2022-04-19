@@ -40,7 +40,15 @@ class MainViewController: UITableViewController {
         
     cell.textLabel?.text = restorauntNames[indexPath.row]// indexPath.row => index of arr
         cell.imageView?.image = UIImage(named: restorauntNames[indexPath.row])
+        cell.imageView?.layer.cornerRadius  = cell.frame.size.height / 2
+        cell.imageView?.clipsToBounds = true // obrezka img soglasno radiusu ugla
         return cell
+    }
+    
+//MARK: - tableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
     }
     
     
