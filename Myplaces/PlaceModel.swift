@@ -5,13 +5,14 @@
 //  Created by user on 19/04/22.
 //
 
-import Foundation
+import RealmSwift
 
-struct Place {
-    var name: String
-    var location: String
-    var type: String
-    var image: String
+class Place {
+    @objc dynamic var name = ""
+    @objc dynamic var location: String?
+    @objc dynamic var  type: String?
+    @objc dynamic var  imageData: Data?
+    @objc dynamic var  restarauntImage: String?
     
    static let restorauntNames = [
         "Burger Heroes" , "Kitchen","Bonsai","Дастархан",
@@ -20,14 +21,21 @@ struct Place {
         "Классик","Love&Life","Шок","Бочка"
     ]
     // static => Struct property  ==> Struct.staticValue
-   static func getPlaces() -> [Place]  {
+   static func savePlaces()  {
         
-        var places = [Place]()
          // evere item in RestarauntName we add in places arr
         for place in restorauntNames {
-            places.append(Place(name: place, location: "Tashkent", type: "Restoraunt", image: place ))
+        let image  = UIImage(named: place)
+            guard let imageData = image?.pngData() else {return}
+//            pngData  img to Data
+            let newPlace = Place()
+            newPlace.name = place
+            newPlace.location = "ufa"
+            newPlace.type = "bar"
+            newPlace.imageData = imageData
+            
+            
         }
-        return places
     }
 
 }
